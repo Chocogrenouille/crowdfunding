@@ -1,0 +1,603 @@
+:root {
+  --base-unit: 16px;
+  --dark-grey: hsl(0, 0%, 48%);
+  --black: hsl(0, 0%, 0%);
+  --light-cyan: hsl(176, 50%, 47%);
+  --dark-cyan: hsl(176, 72%, 28%);
+  --padding-button: 15px 30px;
+  --border-radius-button: 30px;
+  --border-radius-frames: 10px;
+}
+
+html {
+  font-size: var(--base-unit);
+  font-family: "Commissioner", sans-serif;
+  background-color: hsl(0, 0%, 95%);
+}
+
+.wrapper {
+  position: relative;
+}
+
+header {
+  background-image: url("./img/image-hero-desktop.jpg");
+  background-repeat: no-repeat;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.desktop-navigation {
+  list-style: none;
+  display: flex;
+  font-weight: 700;
+  color: hsl(0, 0%, 98%);
+  margin: 0;
+}
+
+nav > ul > li:not(:last-child) {
+  margin-right: 40px;
+}
+
+header > section {
+  background-color: hsl(0, 0%, 98%);
+  width: 40%;
+  text-align: center;
+  margin: 100px auto 0;
+  padding: 40px 20px;
+  border-radius: var(--border-radius-frames);
+  border: 1px hsl(0, 0%, 90%) solid;
+}
+
+header > section > p {
+  color: hsl(0, 0%, 30%);
+  margin-bottom: 40px;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-buttons > button {
+  padding: 0;
+  border: none;
+  border-radius: var(--border-radius-button);
+  font-weight: 700;
+}
+
+.header-buttons button:hover {
+  cursor: pointer;
+}
+
+.header-buttons > .active,
+.header-buttons > .inactive {
+  display: flex;
+  align-items: center;
+}
+
+.header-buttons > .active {
+  padding-right: 15px;
+  color: var(--dark-cyan);
+  background-color: hsl(176, 30%, 90%);
+}
+
+.header-buttons > .inactive {
+  color: hsl(0, 0%, 48%);
+  padding-right: 15px;
+  background-color: hsl(0, 0%, 90%);
+}
+
+.header-buttons > .inactive > svg,
+.header-buttons > .active > svg {
+  padding-right: 15px;
+}
+
+.header-buttons > .active > svg > g > path {
+  fill: white;
+}
+
+.header-buttons > .active > svg > g > circle {
+  fill: var(--dark-cyan);
+}
+
+.header-buttons > .back-button {
+  background-color: var(--dark-cyan);
+  color: white;
+  padding: 20.25px;
+}
+
+.donation-progress {
+  margin: 20px auto 0;
+  width: 40%;
+  background-color: hsl(0, 0%, 98%);
+  padding: 40px 20px;
+  border-radius: var(--border-radius-frames);
+  border: 1px hsl(0, 0%, 90%) solid;
+}
+
+.progress-indicators {
+  display: flex;
+}
+
+.progress-bar {
+  background-color: hsl(0, 0%, 80%);
+  margin: 40px auto 0;
+  border-radius: var(--border-radius-frames);
+  height: 20px;
+}
+
+.progress-bar > .bar {
+  background-color: var(--dark-cyan);
+  border-radius: var(--border-radius-frames);
+  height: 20px;
+}
+
+.progress-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% / 3);
+}
+
+.progress-indicator:not(:last-child) {
+  border-right: 1.5px solid hsl(0, 0%, 90%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-indicator > span {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.project-card {
+  margin: 20px auto 50px;
+  width: 40%;
+  background-color: hsl(0, 0%, 98%);
+  padding: 20px;
+  border-radius: var(--border-radius-frames);
+  border: 1px hsl(0, 0%, 90%) solid;
+}
+
+.project-card > section > .project-explanation-paragraph {
+  color: hsl(0, 0%, 48%);
+}
+
+.pledge-card {
+  margin: 20px auto 0;
+  background-color: hsl(0, 0%, 98%);
+  padding: 10px 20px;
+  border-radius: var(--border-radius-frames);
+  border: 1px hsl(0, 0%, 90%) solid;
+}
+
+.pledge-card > p {
+  color: var(--dark-grey);
+}
+
+.pledge-card-headline-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.pledge-card-headline-wrapper > h5 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.pledge-card-headline-wrapper > span {
+  font-size: 15px;
+  color: var(--light-cyan);
+  font-weight: bold;
+}
+
+.make-pledge {
+  display: flex;
+  justify-content: space-between;
+}
+
+.make-pledge span {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.make-pledge p {
+  margin: 0;
+}
+
+.make-pledge button {
+  background-color: var(--light-cyan);
+  border: none;
+  padding: var(--padding-button);
+  border-radius: var(--border-radius-button);
+  color: hsl(0, 0%, 98%);
+  font-weight: 700;
+  height: min-content;
+}
+
+.make-pledge button:hover {
+  background-color: var(--dark-cyan);
+  cursor: pointer;
+}
+
+.rewards {
+  position: absolute;
+  z-index: 5;
+  background: hsl(0, 0%, 98%);
+  top: 5%;
+  left: calc(50% - 340px);
+  width: 600px;
+  border-radius: 15px;
+  padding: 40px;
+}
+
+.rewards > h4 {
+  font-size: 25px;
+  margin: 0 0 15px 0;
+}
+
+.pledge-type {
+  border: 1px hsl(0, 0%, 90%) solid;
+  border-radius: var(--border-radius-frames);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.pledge-type > label {
+  font-weight: bold;
+  font-size: var(--base-unit);
+}
+
+.pledge-type > label > input {
+  font-size: var(--base-unit);
+  margin: 0 15px 0 0;
+}
+
+.pledge-type > label > span {
+  color: var(--light-cyan);
+  margin-left: var(--base-unit);
+}
+
+.pledge-type.email-pledge > button {
+  background-color: var(--dark-cyan);
+  border: none;
+  margin-left: auto;
+  padding: 10px 20px;
+  border-radius: var(--border-radius-button);
+  color: hsl(0, 0%, 98%);
+  font-weight: 700;
+}
+
+.pledge-type.email-pledge > button:hover {
+  cursor: pointer;
+}
+
+.active-pledge {
+  border: 2px solid var(--light-cyan);
+}
+
+.bamboo-pledge,
+.mahogany-special-pledge,
+.black-edition-pledge {
+  display: grid;
+  grid-template-columns: min-content auto min-content;
+  grid-template-areas:
+    "pledge-input pledge-input pledges-left"
+    "pledge-description pledge-description pledge-description"
+    "make-pledge make-pledge make-pledge"
+    "pledge-error pledge-error pledge-error";
+}
+
+.pledge-type.bamboo-pledge > label,
+.pledge-type.mahogany-special-pledge > label,
+.pledge-type.black-edition-pledge > label {
+  grid-area: pledge-input;
+}
+
+.pledges-left {
+  grid-area: pledges-left;
+  justify-self: end;
+  white-space: nowrap;
+}
+
+.pledge-description {
+  color: var(--dark-grey);
+  grid-area: pledge-description;
+}
+
+.enter-pledge-amount {
+  grid-area: make-pledge;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto max-content max-content;
+  grid-template-areas: "make-pledge pledge-amount button";
+  border-top: 1px hsl(0, 0%, 90%) solid;
+  padding-top: calc(2 * var(--base-unit));
+}
+
+.enter-pledge-amount > p {
+  color: var(--dark-grey);
+  grid-area: make-pledge;
+  margin: 0;
+}
+
+.custom-input {
+  grid-area: pledge-amount;
+  border: 1px solid var(--dark-grey);
+  border-radius: var(--border-radius-button);
+  padding: 12px 5px;
+}
+
+.custom-input:focus {
+  border: 1px solid var(--dark-cyan);
+}
+
+.custom-input > input {
+  font-weight: bold;
+  font-size: var(--base-unit);
+  background: transparent;
+  width: calc(3 * var(--base-unit));
+  border: none;
+  margin: 0;
+  padding: 0;
+  margin: 0 0 0 5px;
+}
+
+.custom-input > input:focus {
+  outline: none;
+}
+
+.sold-out-pledge {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.enter-pledge-amount > button {
+  grid-area: button;
+  margin-left: calc(2 * var(--base-unit));
+  background-color: var(--dark-cyan);
+  color: hsl(0, 0%, 98%);
+  border: none;
+  padding: var(--padding-button);
+  border-radius: var(--border-radius-button);
+  font-weight: bold;
+}
+
+.pledge-error {
+  grid-area: pledge-error;
+  font-size: calc(0.8 * var(--base-unit));
+  font-weight: bold;
+  text-align: right;
+  color: var(--dark-cyan);
+}
+
+.overlay {
+  background-color: hsl(0, 0%, 10%);
+  opacity: 50%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.thank-you {
+  position: absolute;
+  z-index: 5;
+  background: hsl(0, 0%, 98%);
+  top: 5%;
+  left: calc(50% - 240px);
+  width: 400px;
+  border-radius: 15px;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: var(--base-unit) 0;
+}
+
+.thank-you > button {
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: var(--base-unit);
+  background-color: var(--dark-cyan);
+  border-radius: var(--border-radius-button);
+  padding: var(--padding-button);
+}
+
+.thank-you > button:hover {
+  cursor: pointer;
+  background-color: var(--light-cyan);
+}
+
+.thank-you > h5 {
+  font-size: calc(1.2 * var(--base-unit));
+  margin: var(--base-unit) 0 var(--base-unit) 0;
+}
+
+.thank-you > p {
+  color: var(--dark-grey);
+}
+
+@media screen and (max-width: 600px) {
+  header > section,
+  .donation-progress,
+  .project-card,
+  .rewards,
+  .thank-you {
+    width: 80%;
+  }
+
+  .navbar-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 58%,
+      rgba(0, 0, 0, 0.5088629201680672) 85%
+    );
+  }
+
+  .desktop-navigation {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block !important ;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hamburger-menu > div {
+    height: 4px;
+    width: 40px;
+    background-color: white;
+    margin-bottom: 5px;
+  }
+
+  .mobile-navigation {
+    position: absolute;
+    top: 50px;
+    background: white;
+    border-radius: var(--border-radius-frames);
+    padding: 40px 20px;
+    list-style: none;
+    width: 80%;
+    font-weight: 700;
+  }
+
+  .mobile-navigation > li:not(:last-child) {
+    border-bottom: 1px solid var(--dark-grey);
+    padding-bottom: var(--base-unit);
+  }
+
+  .mobile-navigation > li:not(:first-child) {
+    padding-top: var(--base-unit);
+  }
+
+  .rewards,
+  .thank-you {
+    left: 5%;
+    padding: 20px;
+  }
+
+  .bamboo-pledge,
+  .mahogany-special-pledge,
+  .black-edition-pledge {
+    display: grid;
+    grid-template-columns: min-content auto min-content;
+    grid-template-areas:
+      "pledge-input pledge-input pledge-input"
+      "pledge-description pledge-description pledge-description"
+      "pledges-left pledges-left pledges-left"
+      "make-pledge make-pledge make-pledge"
+      "pledge-error pledge-error pledge-error";
+  }
+
+  .pledge-type > label > span {
+    display: block;
+    margin-left: 28px;
+    font-size: calc(0.9 * var(--base-unit));
+    margin-top: calc(0.2 * var(--base-unit));
+  }
+
+  .pledge-description {
+    margin-right: 20px;
+  }
+
+  .pledges-left {
+    justify-self: start;
+    margin-bottom: var(--base-unit);
+  }
+
+  .enter-pledge-amount {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto max-content max-content;
+    grid-template-areas:
+      "make-pledge make-pledge"
+      "pledge-amount button";
+    border-top: 1px hsl(0, 0%, 90%) solid;
+    padding-top: calc(2 * var(--base-unit));
+  }
+
+  .enter-pledge-amount > p {
+    justify-self: center;
+    margin-bottom: calc(2 * var(--base-unit));
+  }
+
+  .header-buttons > .active > span,
+  .header-buttons > .inactive > span {
+    display: none;
+  }
+
+  .header-buttons > .active > svg,
+  .header-buttons > .inactive > svg,
+  .header-buttons > .active,
+  .header-buttons > .inactive {
+    padding: 0;
+  }
+
+  .header-buttons > .back-button {
+    width: 70%;
+  }
+
+  .progress-indicators {
+    flex-direction: column;
+    align-items: center;
+  }
+  .progress-indicator {
+    width: 90%;
+  }
+
+  .progress-indicator:not(:last-child) {
+    border-bottom: 1.5px solid hsl(0, 0%, 90%);
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  .progress-indicator:not(:first-child) {
+    padding-top: 20px;
+  }
+
+  .pledge-card-headline-wrapper {
+    flex-direction: column;
+  }
+
+  .pledge-card-headline-wrapper > span {
+    margin: calc(0.8 * var(--base-unit)) 0 var(--base-unit);
+  }
+
+  .make-pledge {
+    flex-direction: column;
+  }
+
+  .make-pledge > p {
+    margin-bottom: var(--base-unit);
+  }
+
+  .make-pledge > button {
+    width: 70%;
+  }
+}
